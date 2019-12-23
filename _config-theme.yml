@@ -1,0 +1,241 @@
+# Version of the Icarus theme that is currently used
+version: 2.6.0
+# Path or URL to the website's icon
+favicon: /images/favicon.svg
+# Additional HTML meta tags in an array.
+meta: 
+# canonical_url of your site
+canonical_url: 
+# Path or URL to RSS atom.xml
+rss: 
+# Path or URL to the website's logo to be shown on the left of the navigation bar or footer
+logo: /images/logo.svg
+# Open Graph metadata
+# https://hexo.io/docs/helpers.html#open-graph
+open_graph:
+    # Facebook App ID
+    fb_app_id: 
+    # Facebook Admin ID
+    fb_admins: 
+    # Twitter ID
+    twitter_id: Zz_Mark06
+    # Twitter site
+    twitter_site: https://twitter.com/Zz_Mark06
+    # Google+ profile link
+    google_plus: 
+# Navigation bar link settings
+navbar:
+    # Navigation bar menu links
+    menu:
+        Home: /
+        Archives: /archives
+        Categories: /categories
+        Tags: /tags
+        About: /about
+    # Navigation bar links to be shown on the right
+    # links:
+    #     Download on GitHub:
+    #         icon: fab fa-github
+    #         url: 'https://github.com/ppoffice/hexo-theme-icarus'
+# Footer section link settings
+footer:
+    # Links to be shown on the right of the footer section
+    links:
+        Attribution 4.0 International:
+            icon: fab fa-creative-commons-by
+            url: 'https://creativecommons.org/licenses/by/4.0/'
+# Article display settings
+article:
+    # Code highlight settings
+    highlight:
+        # Code highlight themes
+        # https://github.com/highlightjs/highlight.js/tree/master/src/styles
+        theme: atom-one-light
+        # Show code copying button
+        clipboard: true
+        # Default folding status of the code blocks. Can be "", "folded", "unfolded"
+        fold: unfolded
+    # Whether to show article thumbnail images
+    thumbnail: true
+    # Whether to show estimate article reading time
+    readtime: true
+# Search plugin settings
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Search
+search:
+    # Name of the search plugin
+    type: insight
+# Comment plugin settings
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment
+comment:
+    # Name of the comment plugin
+    type: valine
+    app_id: cJJ78yRJRH9kx9ETc3Mlj8c5-gzGzoHsz  # (required) LeanCloud application id
+    app_key: fYCorgBhMRBEYlgJQvoLecCI          # (required) LeanCloud application key
+    notify: true                               # (optional) receive email notification
+    verify: false                              # (optional) show verification code
+    placeholder: 说点什么……                     # (optional) comment box placeholder text
+# Donation entries
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Donation/
+donate:
+    -
+        # Donation entry name
+        type: alipay
+        # Qrcode image URL
+        qrcode: 'data:image/png;base64,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'
+    # -
+    #     # Donation entry name
+    #     type: wechat
+    #     # Qrcode image URL
+    #     qrcode: ''
+    # -
+    #     # Donation entry name
+    #     type: paypal
+    #     # Paypal business ID or email address
+    #     business: ''
+    #     # Currency code
+    #     currency_code: USD
+    # -
+    #     # Donation entry name
+    #     type: patreon
+    #     # URL to the Patreon page
+    #     url: ''
+# Share plugin settings
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share
+share:
+    # Share plugin name
+    type: sharejs
+# Sidebar settings.
+# Please be noted that a sidebar is only visible when it has at least one widget
+sidebar:
+    # left sidebar settings
+    left:
+        # Whether the left sidebar is sticky when page scrolls
+        # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
+        sticky: false
+    # right sidebar settings
+    right:
+        # Whether the right sidebar is sticky when page scrolls
+        # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
+        sticky: true
+# Sidebar widget settings
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
+widgets:
+    -
+        # Widget name
+        type: profile
+        # Where should the widget be placed, left or right
+        position: left
+        # Author name to be shown in the profile widget
+        author: Mark Zhou
+        # Title of the author to be shown in the profile widget
+        author_title: keep simple
+        # Author's current location to be shown in the profile widget
+        location: 北京
+        # Path or URL to the avatar to be shown in the profile widget
+        avatar: 
+        # Email address for the Gravatar to be shown in the profile widget
+        gravatar: zz.mark06@gmail.com
+        # Whether to show avatar image rounded or square
+        avatar_rounded: true
+        # Path or URL for the follow button
+        follow_link: 'https://github.com/ZzMark'
+        # Links to be shown on the bottom of the profile widget
+        social_links:
+            Github:
+                icon: fab fa-github
+                url: 'https://github.com/ZzMark'
+            # Facebook:
+            #     icon: fab fa-facebook
+            #     url: 'https://facebook.com'
+            Twitter:
+                icon: fab fa-twitter
+                url: 'https://twitter.com/Zz_Mark06'
+            # Dribbble:
+            #     icon: fab fa-dribbble
+            #     url: 'https://dribbble.com'
+            RSS:
+                icon: fas fa-rss
+                url: /atom.xml
+    -
+        # Widget name
+        type: toc
+        # Where should the widget be placed, left or right
+        position: left
+    # -
+        # # Widget name
+        # type: links
+        # # Where should the widget be placed, left or right
+        # position: left
+        # # Links to be shown in the links widget
+        # links:
+        #     Hexo: 'https://hexo.io'
+        #     # PPOffice: 'https://github.com/ppoffice'
+    -
+        # Widget name
+        type: category
+        # Where should the widget be placed, left or right
+        position: left
+    -
+        # Widget name
+        type: tagcloud
+        # Where should the widget be placed, left or right
+        position: left
+    -
+        # Widget name
+        type: recent_posts
+        # Where should the widget be placed, left or right
+        position: right
+    -
+        # Widget name
+        type: archive
+        # Where should the widget be placed, left or right
+        position: right
+    -
+        # Widget name
+        type: tag
+        # Where should the widget be placed, left or right
+        position: right
+# Other plugin settings
+plugins:
+    # Enable page animations
+    animejs: false
+    # Enable the lightGallery and Justified Gallery plugins
+    # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/gallery-plugin/
+    gallery: true
+    # Enable the Outdated Browser plugin
+    # http://outdatedbrowser.com/
+    outdated-browser: true
+    # Enable the MathJax plugin
+    # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/mathjax-plugin/
+    mathjax: false
+    # Show the back to top button on mobile devices
+    back-to-top: true
+    # Google Analytics plugin settings
+    # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Google-Analytics
+    google-analytics:
+        # Google Analytics tracking id
+        tracking_id: UA-154883003-1
+    # Baidu Analytics plugin settings
+    # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Baidu-Analytics
+    baidu-analytics:
+        # Baidu Analytics tracking id
+        tracking_id: c3e99bfff793bb7f4d6646bc513afec5
+    # Hotjar user feedback plugin
+    # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Hotjar
+    hotjar:
+        # Hotjar site id
+        site_id: 
+    # Show a loading progress bar at top of the page
+    progressbar: true
+    # BuSuanZi site/page view counter
+    # https://busuanzi.ibruce.info
+    busuanzi: true
+# CDN provider settings
+# https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
+providers:
+    # Name or URL of the JavaScript and/or stylesheet CDN provider
+    cdn: jsdelivr
+    # Name or URL of the webfont CDN provider
+    fontcdn: https://fonts.loli.net/${ type }?family=${ fontname }
+    # Name or URL of the webfont Icon CDN provider
+    iconcdn: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.css
