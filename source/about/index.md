@@ -10,7 +10,7 @@ title: About
 ### Whoami
 
 * 调律者/Zz.Mark
-* HuFi/业余音控 PA，玩模拟设备/业余灯光
+* HuFi/业余音控 PA/业余灯光
 * 佛系 Gamer
 * Java/北京
 
