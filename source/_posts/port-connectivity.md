@@ -5,6 +5,8 @@ tags:
   - 运维
 categories:
   - 环境
+
+thumbnail: /2020/04/port-connectivity/logo.jpg
 ---
 
 此文送给刚开始折腾服务器的小伙伴
@@ -109,14 +111,10 @@ nc -u 10.0.0.2 4000
 
 有一些可能用到的其他工具，怎么用自行搜索吧
 
+抓包工具：
+  - tcpdump
+    tcpdump -nl -A port 1883
 
-抓包工具
-tcpdump
-
-tcpdump -nl -A port 1883
-
-
-常用的网络检测工具
-mtr
-
-等同于同时使用 ping, tracert, nslookup
+常用的网络检测工具：
+  - mtr
+    等同于同时使用 ping, tracert, nslookup

@@ -6,6 +6,7 @@ tags:
  - 环境
 categories:
  - 环境
+thumbnail: /2020/02/常用mirror地址/logo.png
 ---
 
 

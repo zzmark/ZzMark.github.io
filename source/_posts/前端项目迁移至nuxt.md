@@ -9,6 +9,7 @@ tags:
  - SSR
 categories:
  - 前端
+thumbnail: /2020/02/前端项目迁移至nuxt/logo.jpg
 ---
 
 
