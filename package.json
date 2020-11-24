@@ -6,8 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server",
-    "new": "hexo new"
+    "server": "hexo server --draft",
+    "new": "hexo new",
+    "publish": "hexo publish"
   },
   "hexo": {
     "version": "5.2.0"
@@ -27,8 +28,8 @@
     "hexo-generator-tag": "^1.0.0",
     "hexo-log": "2.0.0",
     "hexo-renderer-inferno": "^0.1.3",
+    "hexo-renderer-marked": "^3.3.0",
     "hexo-renderer-stylus": "^2.0.0",
-    "hexo-server": "^2.0.0",
-    "hexo-renderer-marked": "^3.0.0"
+    "hexo-server": "^2.0.0"
   }
 }

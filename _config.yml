@@ -41,7 +41,6 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -56,6 +55,30 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+
+# markdown中，使用相对路径引用资源
+post_asset_folder: true
+marked:
+  gfm: true # 使用 github 方言 [GitHub flavored markdown](https://help.github.com/articles/github-flavored-markdown)
+  pedantic: false
+  breaks: true # 使用 GMF 换行符，要求 gmf: true
+  smartLists: true
+  smartypants: true
+  quotes: '“”‘’'
+  modifyAnchors: 0
+  anchorAlias: false
+  autolink: true
+  mangle: true
+  sanitizeUrl: false
+  headerIds: true
+  lazyload: false # 给图片增加 loading="lazy" 属性
+  prependRoot: true # 将 (Root) 目录置于 config:root 位置
+  postAsset: true # 在 post_asset_folder: true 时，asset 资源会使用相对路径。需要 prependRoot: true
+  external_link:
+    enable: false # 在新标签中打开链接
+    exclude: []
+    nofollow: false
+  disableNunjucks: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
