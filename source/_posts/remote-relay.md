@@ -6,6 +6,7 @@ tags:
 categories:
   - Iot
 thumbnail: /2020/04/remote-relay/1-3.jpg
+cover: /2020/04/remote-relay/1-3.jpg
 ---
 
 为了给主板做远程开关机，搞了这么一个玩具
