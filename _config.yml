@@ -128,8 +128,7 @@ theme: icarus
 deploy:
   type: git
   repo: https://github.com/ZzMark/ZzMark.github.io
-  branch: [branch]
-  message: [message]
+  branch: gh-page
 
 # 默认显示每一篇文章的 TOC
 toc: true
