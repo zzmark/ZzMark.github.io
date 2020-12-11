@@ -113,6 +113,9 @@ navbar:
 footer:
     # Links to be shown on the right of the footer section
     links:
+        黑ICP备17001410号-1:
+            icon: ''
+            url: 'http://beian.miit.gov.cn'
         Creative Commons:
             icon: fab fa-creative-commons
             url: 'https://creativecommons.org/'
