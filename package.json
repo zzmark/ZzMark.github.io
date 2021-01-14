@@ -8,7 +8,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server --draft",
     "new": "hexo new",
-    "publish": "hexo publish"
+    "publish": "hexo clean && hexo publish"
   },
   "hexo": {
     "version": "5.2.0"
@@ -16,6 +16,7 @@
   "dependencies": {
     "bulma-stylus": "0.8.0",
     "hexo": "^5.2.0",
+    "hexo-mod-abbrlink": "git+https://github.com/zzmark/hexo-mod-abbrlink.git",
     "hexo-all-minifier": "^0.5.5",
     "hexo-component-inferno": "^0.10.4",
     "hexo-deployer-git": "^2.1.0",
