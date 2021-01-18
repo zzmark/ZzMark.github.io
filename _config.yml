@@ -125,11 +125,9 @@ theme: icarus
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://github.com/ZzMark/ZzMark.github.io
-  branch: gh-page
+# 详见 _deploy.yml
+
 
 # 默认显示每一篇文章的 TOC
 toc: true
-all_minifier: true
+all_minifier: false
