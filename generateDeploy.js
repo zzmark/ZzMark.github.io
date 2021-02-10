@@ -11,13 +11,13 @@ const content =
     ignore_hidden: false
   - type: cos-cdn
     cloud: tencent
-    bucket: ${bucket}
-    region: ${region}
+    bucket: ${process.env.bucket}
+    region: ${process.env.region}
     cdnEnable: true
     deleteExtraFiles: true
     updatePosts: true
-    secretId: ${secretId}
-    secretKey: ${secretKey}
+    secretId: ${process.env.secretId}
+    secretKey: ${process.env.secretKey}
 all_minifier: true
 `
 
