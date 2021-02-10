@@ -119,6 +119,8 @@ footer:
         Attribution 4.0 International:
             icon: fab fa-creative-commons-by
             url: 'https://creativecommons.org/licenses/by/4.0/'
+        黑ICP备17001410号:
+            url: https://beian.miit.gov.cn/
 # Article related configurations
 article:
     # Code highlight settings
