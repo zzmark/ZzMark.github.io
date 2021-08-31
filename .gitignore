@@ -9,3 +9,5 @@ public/
 _multiconfig.yml
 _deploy.yml
 .env
+
+.idea/

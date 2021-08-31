@@ -12,7 +12,7 @@ head:
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
         # Name of the web application (default to the site title)
-        name: 
+        name:
         # The displayed name of the web application
         # when there is not enough space to display full name
         short_name: 调律者
@@ -33,68 +33,68 @@ head:
                 # A string containing space-separated image dimensions
                 sizes: '160x160'
                 # A hint as to the media type of the image
-                type: 
+                type:
     # Open Graph metadata
     # https://hexo.io/docs/helpers.html#open-graph
     open_graph:
         # Page title (og:title) (optional)
         # You should leave this blank for most of the time
-        title: 
+        title:
         # Page type (og:type) (optional)
         # You should leave this blank for most of the time
         type: blog
         # Page URL (og:url) (optional)
         # You should leave this blank for most of the time
-        url: 
+        url:
         # Page cover (og:image) (optional)
         # You should leave this blank for most of the time
-        image: 
+        image:
         # Site name (og:site_name) (optional)
         # You should leave this blank for most of the time
-        site_name: 
+        site_name:
         # Page author (article:author) (optional)
         # You should leave this blank for most of the time
-        author: 
+        author:
         # Page description (og:description) (optional)
         # You should leave this blank for most of the time
-        description: 
+        description:
         # Twitter card type (twitter:card)
-        twitter_card: 
+        twitter_card:
         # Twitter ID (twitter:creator)
         twitter_id: Zz_Mark06
         # Twitter Site (twitter:site)
         twitter_site: https://twitter.com/Zz_Mark06
         # Google+ profile link (deprecated)
-        google_plus: 
+        google_plus:
         # Facebook admin ID
-        fb_admins: 
+        fb_admins:
         # Facebook App ID
-        fb_app_id: 
+        fb_app_id:
     # Structured data of the page
     # https://developers.google.com/search/docs/guides/intro-structured-data
     structured_data:
         # Page title (optional)
         # You should leave this blank for most of the time
-        title: 
+        title:
         # Page description (optional)
         # You should leave this blank for most of the time
-        description: 
+        description:
         # Page URL (optional)
         # You should leave this blank for most of the time
-        url: 
+        url:
         # Page author (article:author) (optional)
         # You should leave this blank for most of the time
-        author: 
+        author:
         # Page images (optional)
         # You should leave this blank for most of the time
-        image: 
+        image:
     # Additional HTML meta tags in an array
     meta:
         # Meta tag specified in <attribute>=<value> style
         # E.g., name=theme-color;content=#123456 => <meta name="theme-color" content="#123456">
         - ''
     # URL or path to the website's RSS atom.xml
-    rss: 
+    rss:
 # Page top navigation bar configurations
 navbar:
     # Navigation menu items
@@ -104,6 +104,7 @@ navbar:
         # Categories: /categories
         # Tags: /tags
         About: /about
+        KMS服务: /kms
     # Links to be shown on the right of the navigation bar
     # links:
     #     Download on GitHub:
@@ -248,7 +249,7 @@ widgets:
         # Author's current location
         location: 北京
         # URL or path to the avatar image
-        avatar: 
+        avatar:
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -307,7 +308,7 @@ widgets:
     #     position: right
     #     type: subscribe_email
     #     # Hint text under the email input
-    #     description: 
+    #     description:
     #     # Feedburner ID
     #     feedburner_id: ''
     # Google AdSense unit configurations
@@ -335,7 +336,7 @@ plugins:
     # https://www.bing.com/toolbox/webmaster/
     bing_webmaster:
         # Bing Webmaster Tools tracking ID in the <meta> tag
-        tracking_id: 
+        tracking_id:
     # BuSuanZi site/page view counter
     # https://busuanzi.ibruce.info
     busuanzi: true
@@ -343,9 +344,9 @@ plugins:
     # https://www.umeng.com/web
     cnzz:
         # CNZZ tracker id
-        id: 
+        id:
         # CNZZ website id
-        web_id: 
+        web_id:
     # Alerting users about the use of cookies
     # https://www.osano.com/cookieconsent/
     cookie_consent:
@@ -370,7 +371,7 @@ plugins:
     # https://www.hotjar.com/
     hotjar:
         # Hotjar site id
-        site_id: 
+        site_id:
     # Enable the KaTeX math typesetting support
     # https://katex.org/
     katex: false
@@ -386,14 +387,14 @@ plugins:
     # https://statcounter.com/
     statcounter:
         # Statcounter project id
-        project: 
+        project:
         # Statcounter project security code
-        security: 
+        security:
     # Twitter conversion tracking plugin settings
     # https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html
     twitter_conversion_tracking:
         # Twitter Pixel ID
-        pixel_id: 
+        pixel_id:
 # CDN provider settings
 # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
 providers:
