@@ -6,7 +6,7 @@
   <link href="http://www.zzmark.top/atom.xml" rel="self"/>
   
   <link href="http://www.zzmark.top/"/>
-  <updated>2021-01-12T07:41:23.000Z</updated>
+  <updated>2021-02-26T02:22:52.000Z</updated>
   <id>http://www.zzmark.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nfc调研</title>
+    <link href="http://www.zzmark.top/2021/02/3e861463/"/>
+    <id>http://www.zzmark.top/2021/02/3e861463/</id>
+    <published>2021-02-26T02:22:52.000Z</published>
+    <updated>2021-02-26T02:22:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近接了点东西，要用到 nfc 标签，简单做了下调研。</p><p>这篇内容十分的水，大部分内容都是粘贴来的，因为来源太多，记不住哪里粘贴的，没法标注来源</p><h2 id="基础知识调研"><a href="#基础知识调研" class="headerlink" title="基础知识调研"></a>基础知识调研</h2><h3 id="NFC-RFID"><a href="#NFC-RFID" class="headerlink" title="NFC, RFID"></a>NFC, RFID</h3><p>RFID技术：<br>1.通常应用在生产，物流，跟踪和资产管理上；<br>2.根据频率划分包含低频、高频（13.56MHz）、超高频、微波等；<br>3.作用距离取决于频率、读写器功率、读写器天线增益值、标签天线尺寸等，工作距离在几厘米到几十米不等；<br>4.读写器和非接触卡可以是一对多关系，也可以说一对一关系；且读写器和非接触卡是两个实体，不能切换；</p><p>NFC技术：<br>1.通常应用在门禁，公交卡，手机支付等领域；<br>2.频率也是13.56MHz，且兼容大部分RFID高频相关标准（有些是不兼容）；<br>3.NFC作用距离较短，一般都是0~10厘米；<br>4.读写器和标签几乎都是一对一关系；且支持读写模式和卡模式，可以作为读写器也可变为非接触卡；</p><p>总体来说，NFC是RFID的子集，但NFC有些新特性又是RFID所不具备的。</p><h3 id="IC-ID-RFID"><a href="#IC-ID-RFID" class="headerlink" title="IC, ID, RFID"></a>IC, ID, RFID</h3><blockquote><p>ID卡：全称身份识别卡(Identification Card)，多为低频(125Khz)，是一种不可写入的感应卡，含固定的编号，主要有台湾SYRIS的EM格式，美国HID、TI、MOTOROLA等各类ID卡。<br>  IC卡：全称集成电路卡(Integrated Circuit Card)，又称智能卡(Smart Card)。多为高频(13.56Mhz)，可读写数据、容量大、有加密功能、数据记录可靠、使用更方便，如一卡通系统、消费系统等，目前主要有PHILIPS的Mifare系列卡。</p></blockquote><p>  ID卡，低频(125Khz)，不可写入数据，其记录内容(卡号)只可由芯片生产厂一次性写入，开发商只可读出卡号加以利用，无法根据系统的实际需要制订新的号码管理制度；<br>  IC卡，高频(13.56Mhz)，不仅可由授权用户读出大量数据，而且亦可由授权用户写入大量数据(如新的卡用户的权限、用户资料等)，IC卡所记录内容可反复擦写；</p><h3 id="IC卡类型-M1、UID、CUID、FUID、UFUID"><a href="#IC卡类型-M1、UID、CUID、FUID、UFUID" class="headerlink" title="[IC卡类型] M1、UID、CUID、FUID、UFUID"></a>[IC卡类型] M1、UID、CUID、FUID、UFUID</h3><p>IC卡中最常见的是NXP Mifare系列卡，工作在高频（13.56Mhz），根据卡内使用芯片的不同，有如下分类：</p><p>M1卡<br>全称Mifare S50，是最常见的卡，出厂固化UID（UID即指卡号，全球唯一），可存储修改数据；常用于学生卡，饭卡，公交卡，门禁卡；</p><p>M0卡<br>全称Mifare UltraLight，相当于M1卡的精简版，容量更小、功能更少，但价格更低，出厂固化UID，可存储修改数据；常用于地铁卡，公交卡；</p><p>以上两种固化了UID，为正规卡，接下来就是一些没有固化UID，即不正规的卡：</p><p>UID卡<br>全称Mifare UID Chinese magic card，国外叫做中国魔术卡，M1卡的变异版本，使用后门指令(magic指令)，可修改UID（UID在block0分区），可以用来完整克隆M1卡的数据；<br>但是现在新的读卡系统通过检测卡片对后门指令的回应，可以检测出UID卡，因此可以来拒绝UID卡的访问，来达到屏蔽复制卡的功能（即UID防火墙系统）；<br>1、由该芯片加工成的钥匙扣的block0（UID所在的block）可以任意修改，重复修改。<br>2、该卡支持手机直接读卡和写卡（该功能手机需有NFC功能，并且NFC的芯片需要兼容M1的才行，一般来说NXP的NFC芯片都可以，比如三星Note2，华为Mate2 Mat e8等），不需要特殊设备。<br>3、卡片的默认密码为12个F，即FFFFFFFFFFFF。</p><p>CUID卡<br>为了避开UID防火墙系统，CUID卡应运而生，取消响应后门指令(magic指令)，可修改UID，是目前市场上最常用的复制卡；<br>近两年，智能卡系统制造公司，根据CUID卡的特性研发出CUID卡防火墙，虽然现在（2019年）还不是很普及，但是总有一天CUID卡会和UID卡一样面临着淘汰；</p><p>FUID卡<br>FUID卡只能写一次UID，写完之后自动固化UID所在分区，就等同M1卡，目前任何防火墙系统都无法屏蔽，复制的卡几乎和原卡一模一样；<br>但缺点也相对明显，价格高、写坏卡率高，写错就废卡。</p><p>UFUID卡<br>集UID卡和FUID卡的优点于一身，使用后门指令，可修改UID，再手动锁卡，变成M1卡。<br>可先反复读写UID，确认数据无误，手动锁卡变成M1，解决了UID卡的UID防火墙屏蔽，也解决FUID的一次性写入容易写错的问题，且价格比FUID卡还便宜；</p><p>判断是M0卡(Mifare UltraLight)，还是M1卡(Mifare Classic 1k)，可以通过SAK值判断。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">产品ATQASAKUID长度</span><br><span class="line">Mifare Mini00 04094 bytes</span><br><span class="line">Mifare Classic 1k00 04084 bytes</span><br><span class="line">Mifare Classic 4k00 02184 bytes</span><br><span class="line">Mifare Ultraligh00 44007 bytes</span><br><span class="line">Mifare Plus00 44207 bytes</span><br></pre></td></tr></table></figure><h3 id="非加密IC卡和加密IC卡"><a href="#非加密IC卡和加密IC卡" class="headerlink" title="非加密IC卡和加密IC卡"></a>非加密IC卡和加密IC卡</h3><p>非加密IC卡和加密IC卡的区别就是，非加密IC卡中所有扇区的KEYA和KEYB数值都是默认值FFFFFFFFFFFF；<br>而加密IC卡中，其中有扇区的KEYA和KEYB不等于FFFFFFFFFFFF，部分扇区加密的卡称半加密IC卡，所有扇区都加密的卡称全加密IC卡。</p><p>一般的读卡器，像手机的NFC，是读不到IC卡的加密数据的，需要用专门的工具，比如Proxmark3读取。</p><p>对于IC卡，除了对卡上数据加密，还有滚动码加密、服务器数据验证等技术。<br>因此，对IC卡的解密，更多的是门禁卡、签到卡、车库卡等的讨论，像公交卡、饭卡等涉及到资金问题的，基本都有服务器定期校验，得先搞定服务器再说，难度高还违法。</p><p>参考资料：<br>码农生活 篇二：IC卡门卡模拟探秘<br>IC卡简介【M1/S50，UID，CUID，FUID，UFUID复制卡介绍】<br>谈谈 Mifare Classic 破解<br>rfid-practice<br>Type A 卡存储结构与通信<br>Proxmark3 Easy破解门禁卡学习过程</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近接了点东西，要用到 nfc 标签，简单做了下调研。&lt;/p&gt;
+&lt;p&gt;这篇内容十分的水，大部分内容都是粘贴来的，因为来源太多，记不住哪里粘贴的，没法标注来源&lt;/p&gt;
+&lt;h2 id=&quot;基础知识调研&quot;&gt;&lt;a href=&quot;#基础知识调研&quot; class=&quot;headerlink&quot; t</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Thinkpad E440 白名单</title>
@@ -513,32 +535,6 @@
     <category term="Java" scheme="http://www.zzmark.top/tags/Java/"/>
     
     <category term="spring" scheme="http://www.zzmark.top/tags/spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>迁移到 Mac</title>
-    <link href="http://www.zzmark.top/2018/04/transfer-to-macos/"/>
-    <id>http://www.zzmark.top/2018/04/transfer-to-macos/</id>
-    <published>2018-04-10T16:00:00.000Z</published>
-    <updated>2018-04-10T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近重新搬出了黑苹果，打算把工作环境迁上去。</p><p>有些东西还是挺麻烦的，本想直接安装 docker 解决一些环境问题，后来觉得这玩意，笔记本内存并不大，也就只能拿来启动个 mysql，放弃了 docker</p><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh/">Homebrew</a></h2><p>Mac 系统中的 apt、yum，感觉应该是个十分方便的东西。可是实装后，我用来装了个 node，就出了许多问题</p><ol><li>node 装好后没有 npm，不晓得是不是我版本的问题</li><li>不能很好的定制版本，至少没有让我这个没接触过的很容易的选择版本</li><li>软链接还出了问题，虽然提供了解决方法，但是你都提供方法了为啥不自己修复一下</li></ol><p>总而言之，体验不好，最后node环境还是手工解决的，LTS版本</p><p>本想用来装个Java，然后发现里面并没有Oracle jdk，emmm……</p><p>到最后还是自行下载了pkg版本，虽然确实想试试 openjdk 来着</p><p>不了解Mac的服务管理，最后选择了手动下载二进制MySQL</p><h2 id="iTerm2-Oh-My-ZSH"><a href="#iTerm2-Oh-My-ZSH" class="headerlink" title="iTerm2 + Oh My ZSH"></a>iTerm2 + <a href="https://ohmyz.sh/">Oh My ZSH</a></h2><p>这个组合是一个产品小哥和数据大佬的推荐，Oh My ZSH实装之后觉得，zsh可定制性和各种插件好评，虽然我也用不上什么，不过tab的提示和自带主题真的可以</p><p>然而iTerm2就只能说一般了，没感觉到那种眼前一亮，跟系统自带的相比功能也好强度也好，也就那样，可能我还是用不到那些高大上的功能。</p><h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><ul><li><p><a href="https://www.jetbrains.com/">IntelliJ IDEA Ultimate</a><br>直接用 Jetbrains toolbox 安装，省时省力，还有中国 CDN，就是速度很看人品，太慢的话暂停重开可能就会好</p></li><li><p><a href="https://code.visualstudio.com/">VSCode</a><br>微软爸爸的记事本，轻量级开发 IDE，插件很多，底层据说是 Atom 魔改过的，不过那跟我没啥关系</p></li><li><p>印象笔记<br>安卓、win、mac 三平台同步，虽然最近没写过什么正经笔记</p></li><li><p><a href="https://www.google.cn/chrome/">Chrome</a><br>重度谷歌用户必须要有的东西，安卓、win、mac 三平台同步，什么都方便<br>如今也能在国内直接下载了</p></li><li><p>SS<br>用谷歌的怎么能没有这个，顺便一提最近打算自己架设线路，如有定时的轻度用户欢迎合作</p></li><li><p>微信、QQ<br>必须要有的聊天工具，不然自己就像与世隔绝了一样</p></li><li><p><a href="https://macdown.uranusjr.com/">MacDown</a><br>Mac 系统上的 markdown 编辑器，在我心中他只是第二，mou 还是比这个好用，可惜 mou 只支持到10.11<br>不过最近也很少用这东西，反而是 VSCode 一步到位了</p></li><li><p><a href="https://www.alfredapp.com/">Alfred</a><br>Mac 上的神器，能设置许多的方便功能，强于 Mac 的 Spotlight。我加装了有道插件、几个快捷启动、颜色编码识别插件。不过收费产品，暂时还没宽裕到支持正版，请允许我厚颜无耻一次。<br>win 上的 Wox 就是参照这个软件的模式做的。</p></li><li><p><a href="https://www.office.com/?auth=2">office</a><br>office365 套件，跟 win 上用的同一套，一个账户直接通用</p></li></ul><h2 id="朋友推荐的东西"><a href="#朋友推荐的东西" class="headerlink" title="朋友推荐的东西"></a>朋友推荐的东西</h2><p>这里的东西我并没有使用</p><ul><li><p><a href="http://happenapps.com/">Quiver</a><br>用于代替印象笔记，markdown编写，笔记该有的他都有，是个中国人开发的有GitHub仓库不过没开源，收费软件，再加上没有印象那么强劲的全平台，而且我印象会员还有很久，就没考虑</p></li><li><p>MWeb<br>比上面那个更强的笔记软件，markdown编写，还支持生成hexo博客，IOS和Mac客户端，也是中国人开发的，看着官网感觉不错，可是理由同上。</p><p>如有其他日后补充。</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;最近重新搬出了黑苹果，打算把工作环境迁上去。&lt;/p&gt;
-&lt;p&gt;有些东西还是挺麻烦的，本想直接安装 docker 解决一些环境问题，后来觉得这玩意，笔记本内存并不大，也就只能拿来启动个 mysql，放弃了 docker&lt;/p&gt;
-&lt;h2 id=&quot;Homebrew&quot;&gt;&lt;a href</summary>
-      
-    
-    
-    
-    <category term="环境" scheme="http://www.zzmark.top/categories/%E7%8E%AF%E5%A2%83/"/>
-    
-    
-    <category term="环境" scheme="http://www.zzmark.top/tags/%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
