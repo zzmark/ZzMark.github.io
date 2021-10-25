@@ -1,16 +1,89 @@
 ---
 title: 常用环境 mirror 地址
-date: 2020-02-22 21:25:29
-tags: 
- - tools
- - 环境
+tags:
+  - tools
+  - 环境
 categories:
- - 环境
+  - 环境
 thumbnail: /2020/02/常用mirror地址/logo.png
+abbrlink: 428d5fa5
+date: 2020-02-22 21:25:29
+updated: 2021-09-06 12:15:00
 ---
 
 
 主要覆盖了我可能会去使用的 mirror。长期更新。
+
+## 部分工具设置方法
+
+参见 [hedzr/mirror-list](https://github.com/hedzr/mirror-list#china-mirrors)
+
+## github
+
+> 截止到 2021年9月6日12点16分 可用
+
+- fastgit.org
+
+  > 支持 raw , web , git clone , ssh 甚至支持 git push
+  >
+  > 但这是个第三方的东西，不要用来登陆自己的账号
+
+
+  公益项目 [FastGitORG](https://github.com/FastGitORG) 所架设，服务器疑似在东京，作者甚至连 状态检测 都提供了
+
+  功能支持很全面，甚至 ssh 都支持了
+
+  使用方法：
+  ```
+  github.com  替换为 hub.fastgit.org 即可
+
+  raw.githubusercontent.com  替换为  raw.fastgit.org
+  ```
+
+  更多的详见 [doc.fastgit.org](https://doc.fastgit.org/)
+
+- cnpmjs.org
+
+  > 支持  web , git clone
+  
+  阿里的服务，可用性、速度都算是很有保障。
+
+  服务和 cnpm  register.taobao.com 是一套(虽然这个镜像貌似也被废弃了)
+
+  但是支持的功能很少，也就拿来 clone 比较方便，
+
+  使用方法：
+  ```
+  github.com  替换为  github.com.cnpmjs.org  即可
+  ```
+
+- mirror.ghproxy.com
+
+  > 支持 release , git clone ，CDN 处理很好，速度很快
+
+  个人持有，资料很少，但解析的地址是 cnpmjs 和 jsdelivr ，速度有保证
+  没有 web ，不是太方便，仅用于 release 下载和 clone 即可
+
+  使用方法：
+  ```
+  支持的域名为：
+  https://github.com/
+  https://raw.githubusercontent.com/
+  https://gist.githubusercontent.com/
+  https://gist.github.com/
+
+  在几个域名前面加上   https://mirror.ghproxy.com/ 
+
+  例如：
+
+  git clone https://mirror.ghproxy.com/https://github.com/stilleshan/ServerStatus
+
+  wget https://mirror.ghproxy.com/https://github.com/stilleshan/ServerStatus/archive/master.zip
+
+  curl -O https://mirror.ghproxy.com/https://github.com/stilleshan/ServerStatus/archive/master.zip
+
+  wget https://github.com/stilleshan/ServerStatus/archive/master.zip
+  ```
 
 ## 前端 node 管理以及常用 mirror 地址
 
