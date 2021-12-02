@@ -114,8 +114,8 @@ nvm：
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
 # nvm 不支持配置 mirror，但提供了环境变量来影响配置
-export NVM_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
-export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+export NVM_IOJS_ORG_MIRROR=https://npmmirror.com/mirrors/iojs
+export NVM_NODEJS_ORG_MIRROR=http://npmmirror.com/mirrors/node
 
 # 以下安装 lts 版本 node 命令
 nvm install --lts
@@ -125,41 +125,56 @@ nvm use --lts
 nvm-windows:
 ```bat
 REM nvm-windows 贴心的给我们提供了文档 https://github.com/coreybutler/nvm-windows#usage
-nvm node_mirror https://npm.taobao.org/mirrors/node/
-nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+nvm node_mirror https://npmmirror.com/mirrors/node/
+nvm npm_mirror https://npmmirror.com/mirrors/npm/
 
 nvm list available
 
 REM 安装版本需要自行填写
 nvm install %VERSION%
 nvm use %VERSION%
+
+REM 有必要的话，直接上代理
+REM nvm proxy xxxxxx
 ```
 
 ### npm
 
 ```sh
 # 必备的、或许有用的、应该有用的，都在这了
-npm config set registry=https://registry.npm.taobao.org/
-npm config set electron-mirror=https://npm.taobao.org/mirrors/electron/
-npm config set phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs/
-npm config set chromedriver_cdnurl=http://npm.taobao.org/mirrors/chromedriver
-npm config set sass-binary-site=https://npm.taobao.org/mirrors/node-sass/
-npm config set SELENIUM_CDNURL=http://npm.taobao.org/mirrorss/selenium/
-npm config set profiler_binary_host_mirror=http://npm.taobao.org/mirrors/node-inspector/
+npm config set registry=https://registry.npmmirror.com/
+npm config set electron-mirror=https://npmmirror.com/mirrors/electron/
+npm config set phantomjs_cdnurl=https://npmmirror.com/mirrors/phantomjs/
+npm config set chromedriver_cdnurl=http://npmmirror.com/mirrors/chromedriver
+npm config set sass-binary-site=https://npmmirror.com/mirrors/node-sass
+npm config set SELENIUM_CDNURL=http://npmmirror.com/mirrorss/selenium/
+npm config set profiler_binary_host_mirror=http://npmmirror.com/mirrors/node-inspector/
+```
+
+```sh
+# 有必要的话，直接上代理
+# 假设本地socks5代理端口为1812
+# http代理伺服
+npm install -g http-proxy-to-socks
+# 8002 http代理 转发到 socks5://127.0.0.1:1812
+hpts -s 127.0.0.1:1812 -p 8002
+# 设置 npm 代理为8002
+npm config set proxy http://127.0.0.1:8002
+npm config set https-proxy http://127.0.0.1:8002
 ```
 
 ### Yarn
 
 ```sh
-yarn config set registry http://registry.npm.taobao.org
+yarn config set registry http://registry.npmmirror.com
 
 # 以下未经测试
-yarn config set electron-mirror=https://npm.taobao.org/mirrors/electron/
-yarn config set phantomjs_cdnurl=https://npm.taobao.org/mirrors/phantomjs/
-yarn config set chromedriver_cdnurl=http://npm.taobao.org/mirrors/chromedriver
-yarn config set sass-binary-site=https://npm.taobao.org/mirrors/node-sass/
-yarn config set SELENIUM_CDNURL=http://npm.taobao.org/mirrorss/selenium/
-yarn config set profiler_binary_host_mirror=http://npm.taobao.org/mirrors/node-inspector/
+yarn config set electron-mirror=https://npmmirror.com/mirrors/electron/
+yarn config set phantomjs_cdnurl=https://npmmirror.com/mirrors/phantomjs/
+yarn config set chromedriver_cdnurl=http://npmmirror.com/mirrors/chromedriver
+yarn config set sass-binary-site=https://npmmirror.com/mirrors/node-sass
+yarn config set SELENIUM_CDNURL=http://npmmirror.com/mirrorss/selenium/
+yarn config set profiler_binary_host_mirror=http://npmmirror.com/mirrors/node-inspector/
 ```
 
 ## Java
