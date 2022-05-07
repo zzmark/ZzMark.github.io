@@ -1,0 +1,250 @@
+---
+layout: false
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+        }
+
+        body, td, th {
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+        }
+    </style>
+
+    <title>KMS激活</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        table tr:nth-child(even) {
+            background: #eee;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .pre-container {
+            background-color: rgba(0, 0, 0, 0.01);
+            border-bottom: #ccc solid 1px;
+            padding-top: 3vh;
+        }
+
+        .windows-container {
+            background-color: rgba(0, 0, 0, 0.02);
+            border-bottom: #ccc solid 1px;
+            padding-top: 3vh;
+        }
+
+        .office-container {
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: #ccc solid 1px;
+            padding-top: 3vh;
+        }
+
+        .footer {
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #f5f5f5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            html, img {
+                filter: invert(0.9) hue-rotate(.5turn);
+            }
+            img {
+                opacity: .75;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid pre-container">
+    <div class="container">
+        <!-- Content here -->
+        <div class="row">
+            <hr>
+            <div style="height: 2vh"></div>
+            <h4>声明</h4>
+            <h5>本站提供 KMS 服务仅用于测试与技术交流，请勿用于其他用途，发生任何问题均与本人无关。</h5>
+            <div style="height: 2vh"></div>
+            <hr>
+            <div style="height: 2vh"></div>
+        </div>
+
+        <!-- pre -->
+        <div class="row">
+            <div class="col align-self-center">
+                <h3 class="text">本网站KMS激活服务使用前提：</h3>
+                <ol>
+                    <li>您的电脑可以访问互联网，可以打开这个网站</li>
+                    <li>您的 Office 版本必须是 VL 版本，且高于 2013</li>
+                    <li>
+                        您的 Windows 版本需要是以下其中之一
+                        <ul>
+                            <li>Windows 7 专业版、企业版</li>
+                            <li>Windows 8/8.1 专业版、企业版</li>
+                            <li>Windows 10 专业版、教育版、企业版</li>
+                            <li>Windows 10 LSTC、LSTB</li>
+                            <li>即将到来的 Windows 11</li>
+                            <li>Windows Server 2008/2012/2016/2019/2022</li>
+                            <li>Windows Server 版本1709、1803、1809、1903、1909</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3 class="text">Q：能用多久？</h3>
+                <h6 style="color: #4a4a4a">A：目前服务器还有三年有效期</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid windows-container">
+    <div class="container">
+        <!-- windows -->
+        <div class="row">
+            <h2 class="text">Windows</h2>
+            <div class="col">
+                <div>
+                    <p>Windows 使用 GVLK 秘钥来识别是否为VL版本，因此无论是零售版还是VL版，只需安装 GVLK 秘钥后便可以使用 KMS 验证；</p>
+                    <p>安装镜像为VL版本，可跳过安装秘钥步骤</p>
+                    <p>（注：Win7旗舰版不支持KMS激活，请寻求其他方法。）</p>
+                </div>
+                <h4>Usage: </h4>
+                <p>找到对应自己Windows版本的GVLK密钥后，打开 cmd ，将下列命令整理后一行行输入即可</p>
+                <pre>
+<code style="color: #b62284">    slmgr.vbs /upk
+    slmgr.vbs /skms kms.zzmark.top
+    slmgr.vbs /ipk <span style="color: #e22">W269N-WFGWX-YVC9B-4J6C9-T83GX</span>
+    slmgr.vbs /ato
+    slmgr.vbs /xpr</code></pre>
+
+                <br>
+
+                <p>执行成功后，结果应该类似于图中所示</p>
+
+                <div class="text-center">
+                    <img src="/static/kms/windows-kms-success.png" style="max-width: 300px" class="rounded mx-auto"
+                         alt="...">
+                </div>
+
+                <br>
+
+                <p style="color: #666">其中 <span style="color: #e22">W269N-WFGWX-YVC9B-4J6C9-T83GX</span> 为 Windows 10 的
+                    GVLK密钥，其它系统自行更换为对应的 GVLK密钥。</p>
+                <label>附录：常见Windows版本的GVLK秘钥见下表：</label>
+                <table class="table">
+                    <caption class="visually-hidden">GVLKs for Windows</caption>
+                    <thead>
+                    <tr>
+                        <th><strong>Windows版本</strong></th>
+                        <th><strong>GVLK秘钥</strong></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Windows 10 Professional</td>
+                        <td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+                    </tr>
+                    <tr>
+                        <td>Windows Server 2016 Standard</td>
+                        <td>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</td>
+                    </tr>
+                    <tr>
+                        <td>Windows 8.1 Professional</td>
+                        <td>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</td>
+                    </tr>
+                    <tr>
+                        <td>Windows Server 2012 R2 Server Standard</td>
+                        <td>D2N9P-3P6X9-2R39C-7RTCD-MDVJX</td>
+                    </tr>
+                    <tr>
+                        <td>Windows 7 Professional</td>
+                        <td>FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4</td>
+                    </tr>
+                    <tr>
+                        <td>Windows Server 2008 R2 Standard</td>
+                        <td>YC6KT-GKW9T-YTKYR-T4X34-R7VHC</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="text">更多版本的GVLK密钥参见：
+                    <a href="https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys" target="_blank">[MSDN]
+                        KMS 客户端安装密钥</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid office-container">
+    <!-- office -->
+    <div class="container">
+        <div class="row">
+            <h2 class="text">Office</h2>
+            <div class="col">
+                <div>
+                    <p>Office 比较麻烦，需要区分 <code>零售版</code> 和 <code>批量安装版</code>，零售版需要通过命令转换成批量安装版才能激活</p>
+                    <p>因此，没有激活，又没什么能力搞这个的，建议直接卸载，然后使用 office 部署工具 进行安装，装好一定是批量安装版。我这里有剪裁好的配置文件可以直接使用</p>
+
+                    <p>Office 激活，需要先找到安装路径，最简单的方法就是在 C盘搜索文件 <code>OSPP.VBS</code></p>
+                    <p>例如，Office2019 x86(32位) 安装路径为：<code>C:\Program Files (x86)\Microsoft Office\Office16</code></p>
+                    <p>Office2019 x64 安装路径为：<code>C:\Program Files\Microsoft Office\Office16</code></p>
+                </div>
+
+                <div class="text-center">
+                    <img src="/static/kms/find-office-ospp-script.png" style="max-width: 100%" class="rounded mx-auto"
+                         alt="...">
+                </div>
+
+                <h4>Usage: </h4>
+                <p>打开 cmd ，将下列命令整理后一行行输入即可</p>
+                <pre>
+<code style="color: #b62284">    cscript "C:\Program Files\Microsoft Office\Office16\OSPP.VBS" /sethst:zzmark.top
+    cscript "C:\Program Files\Microsoft Office\Office16\OSPP.VBS" /act
+    cscript "C:\Program Files\Microsoft Office\Office16\OSPP.VBS" /dstatus
+</code></pre>
+                <p style="color: #666">
+                    该命令为 Office 2019 ，若版本不同，则替换命令中 <span style="color: #e22">C:\Program Files (x86)\Microsoft Office\Office16</span>
+                    这一部分
+                </p>
+
+                <br>
+
+                <p>执行成功后，结果应该类似于图中所示</p>
+
+                <div class="text-center">
+                    <img src="/static/kms/office-kms-success.png" style="max-width: 100%" class="rounded mx-auto"
+                         alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 2vh"></div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">2021 Mark Zhou</span>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.28/src/ua-parser.min.js"></script>
+<script>
+    const parser = new UAParser();
+    const res = parser.getResult();
+    if (res.os.name === 'Windows') {
+        if (res.os.version === '10') {
+            console.log('当前系统为 windows 10');
+        }
+    }
+
+</script>
+</body>
+</html>

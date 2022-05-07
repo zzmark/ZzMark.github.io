@@ -1,6 +1,10 @@
 ---
 title: {{ title }}
+abbrlink:
 date: {{ date }}
-tags: 
-categories: 
+updated: 
+tags:
+categories:
+cover: /gallery/{{ title }}
+thumbnail: /gallery/{{ title }}
 ---
